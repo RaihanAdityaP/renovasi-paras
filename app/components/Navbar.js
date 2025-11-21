@@ -1,9 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuItems = [
     { name: 'Home', href: '#home' },
@@ -14,23 +23,31 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-pink-400 to-pink-500 shadow-lg">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? 'bg-white shadow-lg' : 'bg-linear-to-r from-pink-500 to-pink-600'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="shrink-0">
-            <Link href="/" className="text-white text-2xl font-bold tracking-wide hover:scale-105 transition-transform">
-              Renovasi Paras.
+            <Link href="/" className={`text-2xl font-bold tracking-wide transition-colors ${
+              scrolled ? 'text-pink-600' : 'text-white'
+            }`}>
+              Renovasi Paras
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-1">
             {menuItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-white hover:text-pink-100 px-3 py-2 rounded-md text-sm font-medium transition-all hover:bg-pink-600/30"
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  scrolled 
+                    ? 'text-gray-700 hover:bg-pink-50 hover:text-pink-600' 
+                    : 'text-white hover:bg-white/20'
+                }`}
               >
                 {item.name}
               </a>
@@ -41,7 +58,9 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-pink-600/30 focus:outline-none"
+              className={`inline-flex items-center justify-center p-2 rounded-lg transition-colors ${
+                scrolled ? 'text-gray-700 hover:bg-pink-50' : 'text-white hover:bg-white/20'
+              }`}
             >
               <svg
                 className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`}
@@ -67,13 +86,17 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-pink-500`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden ${scrolled ? 'bg-white' : 'bg-pink-600'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1">
           {menuItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-white hover:bg-pink-600/30 block px-3 py-2 rounded-md text-base font-medium"
+              className={`block px-3 py-3 rounded-lg text-base font-medium transition-colors ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-pink-50 hover:text-pink-600' 
+                  : 'text-white hover:bg-white/20'
+              }`}
               onClick={() => setIsOpen(false)}
             >
               {item.name}
