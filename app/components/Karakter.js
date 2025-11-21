@@ -78,10 +78,6 @@ export default function Karakter() {
                     </div>
                   </div>
                 </div>
-                
-                <button className="mt-8 bg-white text-pink-500 px-8 py-3 rounded-full font-semibold hover:bg-pink-50 transition-all shadow-lg">
-                  Kembali
-                </button>
               </div>
             </div>
           ))}

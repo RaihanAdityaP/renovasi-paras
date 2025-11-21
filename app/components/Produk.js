@@ -84,9 +84,14 @@ export default function Produk() {
                     </ul>
                   </div>
 
-                  <button className="bg-linear-to-r from-pink-400 to-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:from-pink-500 hover:to-pink-600 transition-all shadow-lg transform hover:scale-105">
+                  <a 
+                    href="https://wa.me/6282136361056?text=Halo%21%20permisi%20kak%20saya%20mau%20order"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-linear-to-r from-pink-400 to-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:from-pink-500 hover:to-pink-600 transition-all shadow-lg transform hover:scale-105"
+                  >
                     Pesan Sekarang
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
