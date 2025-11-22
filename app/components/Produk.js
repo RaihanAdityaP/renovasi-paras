@@ -19,7 +19,7 @@ export default function Produk() {
     },
     {
       name: 'Packaging Premium',
-      image: '/images/packaging_ganci.jpg',
+      image: '../images/packaging_ganci.jpg',
       description: 'Packaging dengan tema adat nusantara. Menggunakan kertas Art Carton 310 gram, dengan laminasi doff.',
       features: [
         'Art Carton 310 gram',
