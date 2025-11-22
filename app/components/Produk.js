@@ -16,7 +16,7 @@ export default function Produk() {
         'Manik-manik dekoratif',
         'Detail pakaian adat'
       ],
-    }, 
+    },
     {
       name: 'Packaging Premium',
       image: '/images/packaging_ganci.jpg',
