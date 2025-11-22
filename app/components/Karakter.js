@@ -1,4 +1,5 @@
 'use client';
+import TrueFocus from './TrueFocus';
 import { useState } from 'react';
 
 export default function Karakter() {
@@ -25,7 +26,14 @@ export default function Karakter() {
     <section id="karakter" className="py-32 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-16">
-          Karakter Nusantara
+              <TrueFocus 
+                sentence="Karakter Nusantara"
+                manualMode={false}
+                blurAmount={5}
+                borderColor="red"
+                animationDuration={2}
+                pauseBetweenAnimations={1}
+                />
         </h2>
 
         {/* Pill Navigation */}
