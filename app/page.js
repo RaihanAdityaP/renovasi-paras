@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-linear-to-br from-pink-50 to-pink-100">
+    <main className="min-h-screen bg-gradient-to-br from-pink-50 to-pink-100">
       <Navbar />
       <Hero />
       <TentangKami />

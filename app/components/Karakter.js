@@ -22,7 +22,7 @@ export default function Karakter() {
   ];
 
   return (
-    <section id="karakter" className="py-32 bg-linear-to-b from-gray-50 to-white">
+    <section id="karakter" className="py-32 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-16">
           Karakter Nusantara
@@ -37,7 +37,7 @@ export default function Karakter() {
                 onClick={() => setActiveTab(index)}
                 className={`relative px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-300 ${
                   activeTab === index
-                    ? 'bg-linear-to-r from-pink-500 to-pink-600 text-white shadow-lg scale-105'
+                    ? 'bg-gradient-to-r from-pink-500 to-pink-600 text-white shadow-lg scale-105'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-white/30'
                 }`}
               >

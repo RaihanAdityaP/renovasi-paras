@@ -43,7 +43,7 @@ export default function Produk() {
                 onClick={() => setActiveTab(index)}
                 className={`relative px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-300 whitespace-nowrap ${
                   activeTab === index
-                    ? 'bg-linear-to-r from-pink-500 to-pink-600 text-white shadow-lg scale-105'
+                    ? 'bg-gradient-to-r from-pink-500 to-pink-600 text-white shadow-lg scale-105'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-white/30'
                 }`}
               >
@@ -65,7 +65,7 @@ export default function Produk() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Product Image Placeholder */}
                 <div className="order-2 md:order-1">
-                  <div className="bg-linear-to-br from-pink-200 to-pink-300 rounded-2xl aspect-square flex items-center justify-center shadow-xl">
+                  <div className="bg-gradient-to-br from-pink-200 to-pink-300 rounded-2xl aspect-square flex items-center justify-center shadow-xl">
                     <div className="text-center p-12">
                       <svg className="w-48 h-48 mx-auto text-white/40" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
@@ -105,7 +105,7 @@ export default function Produk() {
                       href="https://wa.me/6282136361056?text=Halo%21%20permisi%20kak%20saya%20mau%20order"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-linear-to-r from-pink-500 to-pink-600 text-white px-10 py-5 rounded-lg font-semibold text-lg hover:from-pink-600 hover:to-pink-700 transition-all shadow-xl transform hover:scale-105"
+                      className="inline-block bg-gradient-to-r from-pink-500 to-pink-600 text-white px-10 py-5 rounded-lg font-semibold text-lg hover:from-pink-600 hover:to-pink-700 transition-all shadow-xl transform hover:scale-105"
                     >
                       Pesan Sekarang
                     </a>
