@@ -31,10 +31,10 @@ export default function Produk() {
   ];
 
   return (
-    <section id="produk" className="py-32 bg-white">
+    <section id="produk" className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-16">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center text-gray-900 mb-8 sm:mb-12 lg:mb-16">
           <TrueFocus 
             sentence="Produk Kami"
             manualMode={false}
@@ -45,72 +45,77 @@ export default function Produk() {
           />
         </h2>
 
-        {/* Pill Navigation */}
-        <div className="flex justify-center mb-16">
+        {/* Pill Navigation - Fixed */}
+        <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16">
           <div className="inline-flex bg-black/20 rounded-full p-1.5 shadow-lg backdrop-blur-sm">
             {products.map((product, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`relative px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-300 whitespace-nowrap ${
+                className={`relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 ${
                   activeTab === index
                     ? 'bg-gradient-to-r from-pink-500 to-pink-600 text-white shadow-lg scale-105'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-white/30'}`}>
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-white/30'
+                }`}
+              >
                 {product.name}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Product Display */}
+        {/* Product Display - Mobile Optimized */}
         <div className="max-w-6xl mx-auto">
           {products.map((product, index) => (
             <div
               key={index}
               className={`${
                 activeTab === index ? 'block animate-fadeIn' : 'hidden'
-              } transition-all duration-500`}>
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+              } transition-all duration-500`}
+            >
+              <div className="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
 
                 {/* Product Image */}
-                <div className="order-2 md:order-1">
-                  <div className="bg-gradient-to-br from-pink-200 to-pink-300 rounded-2xl aspect-square flex items-center justify-center shadow-xl">
+                <div className="order-1 md:order-1">
+                  <div className="bg-gradient-to-br from-pink-200 to-pink-300 rounded-xl sm:rounded-2xl aspect-square flex items-center justify-center shadow-xl">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover rounded-2xl"
+                      className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
                     />
                   </div>
                 </div>
+
                 {/* Product Info */}
-                <div className="space-y-8 order-1 md:order-2">
+                <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 md:order-2">
                   <div>
-                    <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
                       {product.name}
                     </h3>
-                    <p className="text-xl text-gray-600 leading-relaxed font-light">
+                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed font-light">
                       {product.description}
                     </p>
                   </div>
-                  <div className="space-y-4">
-                    <h4 className="text-2xl font-semibold text-gray-900">Fitur:</h4>
-                    <ul className="space-y-3">
+                  <div className="space-y-3 sm:space-y-4">
+                    <h4 className="text-xl sm:text-2xl font-semibold text-gray-900">Fitur:</h4>
+                    <ul className="space-y-2 sm:space-y-3">
                       {product.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <svg className="w-7 h-7 text-pink-500 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-5 h-5 sm:w-6 lg:w-7 sm:h-6 lg:h-7 text-pink-500 mr-2 sm:mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>
-                          <span className="text-lg text-gray-700">{feature}</span>
+                          <span className="text-base sm:text-lg text-gray-700">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="pt-4">
+                  <div className="pt-2 sm:pt-4">
                     <a
                       href="https://wa.me/6282136361056?text=Halo%21%20permisi%20kak%20saya%20mau%20order"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-gradient-to-r from-pink-500 to-pink-600 text-white px-10 py-5 rounded-lg font-semibold text-lg hover:from-pink-600 hover:to-pink-700 transition-all shadow-xl transform hover:scale-105">
+                      className="inline-block bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg font-semibold text-base sm:text-lg hover:from-pink-600 hover:to-pink-700 transition-all shadow-xl transform hover:scale-105"
+                    >
                       Pesan Sekarang
                     </a>
                   </div>
